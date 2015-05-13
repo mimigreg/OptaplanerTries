@@ -1,0 +1,50 @@
+package fr.michot.funfair.solver;
+dialect  "java"
+
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+import fr.michot.funfair.domain.Attraction;
+import fr.michot.funfair.domain.Period;
+import fr.michot.funfair.domain.VisitorGroup;
+import fr.michot.funfair.domain.VisitorWish;
+import fr.michot.funfair.domain.FunSession;
+
+global HardSoftScoreHolder scoreHolder;
+
+// ############################################################################
+// Hard constraints
+// ############################################################################
+
+rule "$requiredCapacityTotal"
+    when
+        $attraction : Attraction($sessionCapacity : sessionCapacity)
+        $requiredCapacityTotal : Number(intValue > $sessionCapacity) from accumulate(
+            FunSession(
+                attraction == $attraction,
+                $requiredCapacity : visitorGroup.visitorList.size()
+                ),
+            sum($requiredCapacity)
+        )
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, $sessionCapacity - $requiredCapacityTotal.intValue());
+end
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
+
+rule "groupPreference"
+    when
+        $visitorGroup : VisitorGroup($wishes : visitorWishList)
+        exists FunSession(visitorGroup == $visitorGroup , $attraction : attraction)
+//        $happy : Number(intValue > $wishes) from accumulate(
+//            VisitorWish(
+//                attraction == $attraction,
+//                $wheight : wishWeight
+//            ),
+//            sum($wheight)
+//        )
+    then
+//        scoreHolder.addSoftConstraintMatch(kcontext, + $happy.intValue());
+        scoreHolder.addSoftConstraintMatch(kcontext, + $visitorGroup.getVisitorList().size());
+end
