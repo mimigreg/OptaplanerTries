@@ -35,7 +35,6 @@ public class DayPlanning implements Solution<HardSoftScore> {
         this.visitorList = visitorList;
     }
 
-    @ValueRangeProvider(id = "visitorGroupRange")
     public List<VisitorGroup> getVisitorGroupList() {
         return visitorGroupList;
     }

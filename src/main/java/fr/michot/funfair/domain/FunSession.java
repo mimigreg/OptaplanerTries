@@ -41,7 +41,6 @@ public class FunSession {
         this.attraction = attraction;
     }
 
-    @PlanningVariable(valueRangeProviderRefs = {"visitorGroupRange"})
     public VisitorGroup getVisitorGroup() {
         return visitorGroup;
     }
@@ -58,4 +57,20 @@ public class FunSession {
                 ", visitorGroup=" + visitorGroup +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        FunSession that = (FunSession) o;
+
+        if (attraction != null ? !attraction.equals(that.attraction) : that.attraction != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (period != null ? !period.equals(that.period) : that.period != null) return false;
+        if (visitorGroup != null ? !visitorGroup.equals(that.visitorGroup) : that.visitorGroup != null) return false;
+
+        return true;
+    }
+
 }

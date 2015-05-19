@@ -37,4 +37,19 @@ public class Visitor {
     public String toString() {
         return firstName  + " " + familyName;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Visitor visitor = (Visitor) o;
+
+        if (familyName != null ? !familyName.equals(visitor.familyName) : visitor.familyName != null) return false;
+        if (firstName != null ? !firstName.equals(visitor.firstName) : visitor.firstName != null) return false;
+        if (id != null ? !id.equals(visitor.id) : visitor.id != null) return false;
+
+        return true;
+    }
+
 }

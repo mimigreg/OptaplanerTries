@@ -7,11 +7,10 @@
     <scoreDirectorFactory>
         <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
         <scoreDrl>fr/michot/funfair/solver/funfairScoreRules.drl</scoreDrl>
-        <!--<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
     </scoreDirectorFactory>
 
     <termination>
-        <secondsSpentLimit>120</secondsSpentLimit>
+        <secondsSpentLimit>60</secondsSpentLimit>
     </termination>
     <constructionHeuristic>
         <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
@@ -23,29 +22,5 @@
         <forager>
             <acceptedCountLimit>1000</acceptedCountLimit>
         </forager>
-        <unionMoveSelector>
-            <cartesianProductMoveSelector>
-                <changeMoveSelector>
-                    <entitySelector id="cartesianProductEntitySelector">
-                        <entityClass>fr.michot.funfair.domain.FunSession</entityClass>
-                    </entitySelector>
-                    <valueSelector>
-                        <variableName>visitorGroup</variableName>
-                    </valueSelector>
-                </changeMoveSelector>
-                <changeMoveSelector>
-                    <entitySelector mimicSelectorRef="cartesianProductEntitySelector"/>
-                    <valueSelector>
-                        <variableName>period</variableName>
-                    </valueSelector>
-                </changeMoveSelector>
-            </cartesianProductMoveSelector>
-            <swapMoveSelector>
-                <entitySelector>
-                    <entityClass>fr.michot.funfair.domain.FunSession</entityClass>
-                </entitySelector>
-            </swapMoveSelector>
-        </unionMoveSelector>
-
     </localSearch>
 </solver>

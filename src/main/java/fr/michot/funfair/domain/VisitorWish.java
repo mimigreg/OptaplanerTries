@@ -37,4 +37,19 @@ public class VisitorWish {
     public String toString() {
         return attraction + " " + "*****".substring(5-wishWeight);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VisitorWish that = (VisitorWish) o;
+
+        if (wishWeight != that.wishWeight) return false;
+        if (attraction != null ? !attraction.equals(that.attraction) : that.attraction != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+
+        return true;
+    }
+
 }

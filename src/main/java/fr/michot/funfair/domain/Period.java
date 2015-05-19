@@ -9,7 +9,7 @@ public class Period {
     private String startDateTimeString;
     private int periodIndex;
     private int dayIndex;
-    private int duration; // in minutes
+    private int durationInMinutes; // in minutes
 
     public Long getId() {
         return id;
@@ -43,16 +43,34 @@ public class Period {
         this.dayIndex = dayIndex;
     }
 
-    public int getDuration() {
-        return duration;
+    public int getDurationInMinutes() {
+        return durationInMinutes;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setDurationInMinutes(int durationInMinutes) {
+        this.durationInMinutes = durationInMinutes;
     }
 
     @Override
     public String toString() {
         return startDateTimeString;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Period period = (Period) o;
+
+        if (dayIndex != period.dayIndex) return false;
+        if (durationInMinutes != period.durationInMinutes) return false;
+        if (periodIndex != period.periodIndex) return false;
+        if (id != null ? !id.equals(period.id) : period.id != null) return false;
+        if (startDateTimeString != null ? !startDateTimeString.equals(period.startDateTimeString) : period.startDateTimeString != null)
+            return false;
+
+        return true;
+    }
+
 }

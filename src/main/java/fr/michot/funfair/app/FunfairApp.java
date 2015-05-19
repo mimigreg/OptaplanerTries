@@ -2,11 +2,13 @@ package fr.michot.funfair.app;
 
 import fr.michot.funfair.domain.DayPlanning;
 import fr.michot.funfair.domain.FunSession;
+import fr.michot.funfair.domain.Visitor;
+import fr.michot.funfair.domain.VisitorGroup;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 
 import java.io.StringWriter;
-import java.util.List;
+import java.util.*;
 
 /**
  * Copyright SMABTP
@@ -42,9 +44,24 @@ public class FunfairApp {
         StringWriter sw = new StringWriter();
 
         List<FunSession> funSessions = solvedDayPlanning.getFunSessionList();
-        for (int i = 0; i < funSessions.size(); i++) {
-            FunSession funSession =  funSessions.get(i);
-            sw.write(funSession.toString()+"\n");
+        Map<String,List<Visitor>> attractionsPlaning = new HashMap();
+        for (FunSession funSession : funSessions) {
+            String timedAttraction = funSession.getAttraction().getName() + "\t\t" + funSession.getPeriod().getStartDateTimeString()+ "\t\t capacity : " + funSession.getAttraction().getSessionCapacity();
+            List<Visitor> visitorGroups = attractionsPlaning.get(timedAttraction);
+            if(visitorGroups == null) visitorGroups = new ArrayList<Visitor>();
+            visitorGroups.addAll(funSession.getVisitorGroup().getVisitorList());
+            attractionsPlaning.put(timedAttraction,visitorGroups);
+        }
+
+        for (String timedAttraction : attractionsPlaning.keySet()) {
+            sw.append(timedAttraction + " \t\t" );
+            sw.append(" Used : "+attractionsPlaning.get(timedAttraction).size());
+            boolean isFirst = true;
+            for(Visitor visitor : attractionsPlaning.get(timedAttraction)) {
+                sw.append((isFirst?"\t":", ")+ visitor.toString());
+                isFirst = false;
+            }
+            sw.append("\n");
         }
 
         return sw.toString();

@@ -13,21 +13,21 @@
       ],
       "visitorWishList": [
         {
-          "id":0,
+          "id": 0,
           "attraction": {
             "name": "Space mountain",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 0,
             "latitude": 0
           },
           "wishWeight": 5
         },
         {
-          "id":1,
+          "id": 1,
           "attraction": {
             "name": "Buzz Lightyear",
-            "sessionCapacity": 5,
+            "sessionCapacity": 50,
             "sessionDuration": 10,
             "longitude": 10,
             "latitude": 10
@@ -53,22 +53,33 @@
       ],
       "visitorWishList": [
         {
-          "id":2,
+          "id": 2,
           "attraction": {
             "name": "Thunder mountain",
-            "sessionCapacity": 5,
-            "sessionDuration": 3,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 20,
             "latitude": 20
           },
           "wishWeight": 5
         },
         {
-          "id":3,
+          "id": 12,
+          "attraction": {
+            "name": "Space mountain",
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
+            "longitude": 0,
+            "latitude": 0
+          },
+          "wishWeight": 1
+        },
+        {
+          "id": 3,
           "attraction": {
             "name": "Dumbo the elephant",
-            "sessionCapacity": 5,
-            "sessionDuration": 3,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 30,
             "latitude": 30
           },
@@ -97,22 +108,33 @@
       ],
       "visitorWishList": [
         {
-          "id":4,
+          "id": 4,
           "attraction": {
             "name": "Thunder mountain",
-            "sessionCapacity": 5,
-            "sessionDuration": 3,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 20,
             "latitude": 20
           },
           "wishWeight": 5
         },
         {
-          "id":5,
+          "id": 11,
+          "attraction": {
+            "name": "Space mountain",
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
+            "longitude": 0,
+            "latitude": 0
+          },
+          "wishWeight": 1
+        },
+        {
+          "id": 5,
           "attraction": {
             "name": "Dumbo the elephant",
-            "sessionCapacity": 5,
-            "sessionDuration": 3,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 30,
             "latitude": 30
           },
@@ -129,55 +151,55 @@
       ],
       "visitorWishList": [
         {
-          "id":6,
+          "id": 6,
           "attraction": {
             "name": "Space mountain",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 0,
             "latitude": 0
           },
           "wishWeight": 1
         },
         {
-          "id":7,
+          "id": 7,
           "attraction": {
             "name": "Buzz Lightyear",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 10,
             "latitude": 10
           },
           "wishWeight": 2
         },
         {
-          "id":8,
+          "id": 8,
           "attraction": {
             "name": "Thunder mountain",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 20,
             "latitude": 20
           },
           "wishWeight": 3
         },
         {
-          "id":9,
+          "id": 9,
           "attraction": {
             "name": "Dumbo the elephant",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 30,
             "latitude": 30
           },
           "wishWeight": 4
         },
         {
-          "id":10,
+          "id": 10,
           "attraction": {
             "name": "Aerosmith",
-            "sessionCapacity": 5,
-            "sessionDuration": 5,
+            "sessionCapacity": 50,
+            "sessionDuration": 30,
             "longitude": 40,
             "latitude": 40
           },
@@ -189,159 +211,89 @@
   "attractionList": [
     {
       "name": "Space mountain",
-      "sessionCapacity": 5,
-      "sessionDuration": 5,
+      "sessionCapacity": 50,
+      "sessionDuration": 30,
       "longitude": 0,
       "latitude": 0
     },
     {
       "name": "Buzz Lightyear",
-      "sessionCapacity": 5,
-      "sessionDuration": 5,
+      "sessionCapacity": 50,
+      "sessionDuration": 30,
       "longitude": 10,
       "latitude": 10
     },
     {
       "name": "Thunder mountain",
-      "sessionCapacity": 5,
-      "sessionDuration": 3,
+      "sessionCapacity": 50,
+      "sessionDuration": 30,
       "longitude": 20,
       "latitude": 20
     },
     {
       "name": "Dumbo the elephant",
-      "sessionCapacity": 5,
-      "sessionDuration": 5,
+      "sessionCapacity": 50,
+      "sessionDuration": 30,
       "longitude": 30,
       "latitude": 30
     },
     {
       "name": "Aerosmith",
-      "sessionCapacity": 5,
-      "sessionDuration": 5,
+      "sessionCapacity": 50,
+      "sessionDuration": 30,
       "longitude": 40,
       "latitude": 40
     }
   ],
   "periodList": [
     {
-      "startDateTimeString": "10H00 - 10H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "10H30 - 11H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "11H00 - 11H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "11H30 - 12H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "12H00 - 12H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "12H30 - 13H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "13H00 - 13H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "13H30 - 14H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "14H00 - 14H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "14H30 - 15H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "15H00 - 15H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
-      "startDateTimeString": "15H30 - 16H00",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    }, {
-      "startDateTimeString": "16H00 - 16H30",
-      "periodIndex": 1,
-      "dayIndex": 1,
-      "duration": 30
-    },
-    {
       "startDateTimeString": "16H30 - 17H00",
       "periodIndex": 1,
       "dayIndex": 1,
-      "duration": 30
-    }, {
+      "durationInMinutes": 30
+    },
+    {
       "startDateTimeString": "17H00 - 17H30",
       "periodIndex": 1,
       "dayIndex": 1,
-      "duration": 30
+      "durationInMinutes": 30
     },
     {
       "startDateTimeString": "17H30 - 18H00",
       "periodIndex": 1,
       "dayIndex": 1,
-      "duration": 30
-    }, {
+      "durationInMinutes": 30
+    },
+    {
       "startDateTimeString": "18H00 - 18H30",
       "periodIndex": 1,
       "dayIndex": 1,
-      "duration": 30
+      "durationInMinutes": 30
     },
     {
       "startDateTimeString": "18H30 - 19H00",
       "periodIndex": 1,
       "dayIndex": 1,
-      "duration": 30
+      "durationInMinutes": 30
     }
   ],
   "visitorWishList": [
     {
-      "id":0,
+      "id": 0,
       "attraction": {
         "name": "Space mountain",
-        "sessionCapacity": 5,
-        "sessionDuration": 5,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 0,
         "latitude": 0
       },
       "wishWeight": 5
     },
     {
-      "id":1,
+      "id": 1,
       "attraction": {
         "name": "Buzz Lightyear",
-        "sessionCapacity": 5,
+        "sessionCapacity": 50,
         "sessionDuration": 10,
         "longitude": 10,
         "latitude": 10
@@ -349,65 +301,65 @@
       "wishWeight": 2
     },
     {
-      "id":2,
+      "id": 2,
       "attraction": {
         "name": "Thunder mountain",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 20,
         "latitude": 20
       },
       "wishWeight": 5
     },
     {
-      "id":3,
+      "id": 3,
       "attraction": {
         "name": "Dumbo the elephant",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 30,
         "latitude": 30
       },
       "wishWeight": 1
     },
     {
-      "id":4,
+      "id": 4,
       "attraction": {
         "name": "Thunder mountain",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 20,
         "latitude": 20
       },
       "wishWeight": 5
     },
     {
-      "id":5,
+      "id": 5,
       "attraction": {
         "name": "Dumbo the elephant",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 30,
         "latitude": 30
       },
       "wishWeight": 1
     },
     {
-      "id":6,
+      "id": 6,
       "attraction": {
         "name": "Space mountain",
-        "sessionCapacity": 5,
-        "sessionDuration": 5,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 0,
         "latitude": 0
       },
       "wishWeight": 1
     },
     {
-      "id":7,
+      "id": 7,
       "attraction": {
         "name": "Buzz Lightyear",
-        "sessionCapacity": 5,
+        "sessionCapacity": 50,
         "sessionDuration": 10,
         "longitude": 10,
         "latitude": 10
@@ -415,33 +367,33 @@
       "wishWeight": 2
     },
     {
-      "id":8,
+      "id": 8,
       "attraction": {
         "name": "Thunder mountain",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 20,
         "latitude": 20
       },
       "wishWeight": 3
     },
     {
-      "id":9,
+      "id": 9,
       "attraction": {
         "name": "Dumbo the elephant",
-        "sessionCapacity": 5,
-        "sessionDuration": 3,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 30,
         "latitude": 30
       },
       "wishWeight": 4
     },
     {
-      "id":10,
+      "id": 10,
       "attraction": {
         "name": "Aerosmith",
-        "sessionCapacity": 5,
-        "sessionDuration": 5,
+        "sessionCapacity": 50,
+        "sessionDuration": 30,
         "longitude": 40,
         "latitude": 40
       },

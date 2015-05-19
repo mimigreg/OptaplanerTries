@@ -21,7 +21,7 @@ public class VisitorGroup {
     }
 
     public List<Visitor> getVisitorList() {
-        return visitorList==null?new ArrayList<Visitor>():visitorList;
+        return visitorList;//==null?new ArrayList<Visitor>():visitorList;
     }
 
     public void setVisitorList(List<Visitor> visitorList) {
@@ -29,7 +29,7 @@ public class VisitorGroup {
     }
 
     public List<VisitorWish> getVisitorWishList() {
-        return visitorWishList==null?new ArrayList<VisitorWish>():visitorWishList;
+        return visitorWishList;//==null?new ArrayList<VisitorWish>():visitorWishList;
     }
 
     public void setVisitorWishList(List<VisitorWish> visitorWishList) {
@@ -40,4 +40,20 @@ public class VisitorGroup {
     public String toString() {
         return visitorList+", ";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VisitorGroup that = (VisitorGroup) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (visitorList != null ? !visitorList.equals(that.visitorList) : that.visitorList != null) return false;
+        if (visitorWishList != null ? !visitorWishList.equals(that.visitorWishList) : that.visitorWishList != null)
+            return false;
+
+        return true;
+    }
+
 }

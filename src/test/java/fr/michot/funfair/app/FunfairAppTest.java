@@ -35,11 +35,13 @@ public class FunfairAppTest {
 
         // Set a non ordonated session list
         ArrayList<FunSession> funSessions = new ArrayList<FunSession>();
-        for(Attraction attraction: dayPlanning.getAttractionList()) {
+        for(VisitorGroup visitorGroup: dayPlanning.getVisitorGroupList()) {
+            for (VisitorWish visitorWish : visitorGroup.getVisitorWishList()) {
                 FunSession funSession = new FunSession();
-                funSession.setAttraction(attraction);
-                funSession.setVisitorGroup(new VisitorGroup());
+                funSession.setAttraction(visitorWish.getAttraction());
+                funSession.setVisitorGroup(visitorGroup);
                 funSessions.add(funSession);
+            }
         }
         this.dayPlanning.setFunSessionList(funSessions);
     }
@@ -57,6 +59,7 @@ public class FunfairAppTest {
         assertNotNull(dayPlanning.getFunSessionList());
 
         System.out.println(FunfairApp.toDisplayString(dayPlanning));
+        System.out.println("Hard : "+dayPlanning.getScore().getHardScore()+" Soft : "+dayPlanning.getScore().getSoftScore());
     }
 
     @Test

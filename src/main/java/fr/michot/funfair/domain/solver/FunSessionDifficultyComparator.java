@@ -18,7 +18,7 @@ public class FunSessionDifficultyComparator implements Comparator<FunSession>, S
         VisitorGroup aGroup = a.getVisitorGroup();
             VisitorGroup bGroup  = b.getVisitorGroup();
         return new CompareToBuilder()
-//                .append(aGroup.getVisitorList(), bGroup.getVisitorList())
+                .append(aGroup.getVisitorList().size(), bGroup.getVisitorList().size())
 //                .append(aGroup.getVisitorWishList(), bGroup.getVisitorWishList())
                 .append(a.getId(), b.getId())
                 .toComparison();
