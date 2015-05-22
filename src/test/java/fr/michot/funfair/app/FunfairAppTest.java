@@ -1,10 +1,8 @@
 package fr.michot.funfair.app;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.michot.funfair.domain.*;
 import org.junit.Test;
 
-import java.io.*;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -15,24 +13,12 @@ public class FunfairAppTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        // LoadConfFile
-        InputStream confFile = ClassLoader.getSystemResourceAsStream("dataset.json");
+        // Load dataset
+        System.out.println("Generating dataset");
+        //this.dayPlanning = DataSetGenerator.generateTotalDataSetFromTotalJson("dataset.json");
+        this.dayPlanning = DataSetGenerator.generateTotalDataSet("attractionList.json", 60000, 1, 9, 22, 20);
 
-        //read json file data to String
-        InputStreamReader ir = new InputStreamReader(confFile);
-        BufferedReader br = new BufferedReader(ir);
-        StringWriter sr = new StringWriter();
-        while (br.ready()) {
-            sr.write(br.readLine());
-        }
-        byte[] jsonData = sr.toString().getBytes();
-
-        //create ObjectMapper instance
-        ObjectMapper objectMapper = new ObjectMapper();
-        //convert json string to object
-        this.dayPlanning = objectMapper.readValue(jsonData, DayPlanning.class);
-
-
+        System.out.println("Preparing problem");
         // Set a non ordonated session list
         ArrayList<FunSession> funSessions = new ArrayList<FunSession>();
         for(VisitorGroup visitorGroup: dayPlanning.getVisitorGroupList()) {
@@ -44,9 +30,10 @@ public class FunfairAppTest {
             }
         }
         this.dayPlanning.setFunSessionList(funSessions);
+        System.out.println("Ready to test");
     }
 
-    @org.junit.Test
+    @Test
     public void testMain() throws Exception {
         assertNotNull("Fail : dayPlanning not initialized",dayPlanning);
         FunfairApp.main(null);

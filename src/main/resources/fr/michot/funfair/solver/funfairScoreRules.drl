@@ -17,9 +17,9 @@ global HardSoftScoreHolder scoreHolder;
 
 rule "$requiredCapacityTotal"
     when
-        $attraction : Attraction($sessionCapacity : sessionCapacity)
+        $attraction : Attraction($periodCapacity : periodCapacity)
         $period : Period()
-        $requiredCapacityTotal : Number(intValue > $sessionCapacity) from accumulate(
+        $requiredCapacityTotal : Number(intValue > $periodCapacity) from accumulate(
             FunSession(
                 attraction == $attraction,
                 period == $period,
@@ -28,23 +28,22 @@ rule "$requiredCapacityTotal"
             sum($requiredCapacity)
         )
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $sessionCapacity - $requiredCapacityTotal.intValue());
+        scoreHolder.addHardConstraintMatch(kcontext, $periodCapacity - $requiredCapacityTotal.intValue());
 end
 
 rule "$personPlaningConflict"
     when
         $period : Period($periodDuration : durationInMinutes)
         $group : VisitorGroup($groupId : id)
-        $requiredGroupDurationTotal : Number(intValue > $periodDuration) from accumulate(
-            FunSession(
+        $requiredGroupDurationTotal : Number(intValue > 1) from accumulate(
+            $funsession : FunSession(
                 visitorGroup == $group,
-                period == $period,
-                $requiredDuration : attraction.sessionDuration
+                period == $period
                 ),
-            sum($requiredDuration)
+            count ($funsession)
         )
     then
-        scoreHolder.addHardConstraintMatch(kcontext, $periodDuration - $requiredGroupDurationTotal.intValue());
+        scoreHolder.addHardConstraintMatch(kcontext, 1 - $requiredGroupDurationTotal.intValue());
 end
 
 // ############################################################################
@@ -53,7 +52,7 @@ end
 
 rule "$optimiseEmptyPlaces"
     when
-        $attraction : Attraction($sessionCapacity:sessionCapacity)
+        $attraction : Attraction($periodCapacity:periodCapacity)
         $period : Period()
         $occupiedSpacesTotal : Number(intValue > 0 ) from accumulate(
             FunSession(
@@ -64,5 +63,5 @@ rule "$optimiseEmptyPlaces"
             sum($occupiedPlaces)
         )
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, -($sessionCapacity - $occupiedSpacesTotal.intValue()));
+        scoreHolder.addSoftConstraintMatch(kcontext, -($periodCapacity - $occupiedSpacesTotal.intValue()));
 end

@@ -6,9 +6,8 @@ package fr.michot.funfair.domain;
  */
 public class Period {
     protected Long id;
-    private String startDateTimeString;
+    private String periodDescription;
     private int periodIndex;
-    private int dayIndex;
     private int durationInMinutes; // in minutes
 
     public Long getId() {
@@ -19,12 +18,12 @@ public class Period {
         this.id = id;
     }
 
-    public String getStartDateTimeString() {
-        return startDateTimeString;
+    public String getPeriodDescription() {
+        return periodDescription;
     }
 
-    public void setStartDateTimeString(String startDateTimeString) {
-        this.startDateTimeString = startDateTimeString;
+    public void setPeriodDescription(String periodDescription) {
+        this.periodDescription = periodDescription;
     }
 
     public int getPeriodIndex() {
@@ -33,14 +32,6 @@ public class Period {
 
     public void setPeriodIndex(int periodIndex) {
         this.periodIndex = periodIndex;
-    }
-
-    public int getDayIndex() {
-        return dayIndex;
-    }
-
-    public void setDayIndex(int dayIndex) {
-        this.dayIndex = dayIndex;
     }
 
     public int getDurationInMinutes() {
@@ -53,7 +44,7 @@ public class Period {
 
     @Override
     public String toString() {
-        return startDateTimeString;
+        return periodDescription;
     }
 
     @Override
@@ -63,11 +54,10 @@ public class Period {
 
         Period period = (Period) o;
 
-        if (dayIndex != period.dayIndex) return false;
         if (durationInMinutes != period.durationInMinutes) return false;
         if (periodIndex != period.periodIndex) return false;
         if (id != null ? !id.equals(period.id) : period.id != null) return false;
-        if (startDateTimeString != null ? !startDateTimeString.equals(period.startDateTimeString) : period.startDateTimeString != null)
+        if (periodDescription != null ? !periodDescription.equals(period.periodDescription) : period.periodDescription != null)
             return false;
 
         return true;

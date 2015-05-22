@@ -21,7 +21,7 @@ public class DayPlanning implements Solution<HardSoftScore> {
     private List<VisitorGroup> visitorGroupList;
     private List<Attraction> attractionList;
     private List<Period> periodList;
-    private List<VisitorWish> visitorWishList;
+   // private List<VisitorWish> visitorWishList;
 
     private List<FunSession> funSessionList;
 
@@ -69,14 +69,14 @@ public class DayPlanning implements Solution<HardSoftScore> {
         this.funSessionList = funSessionList;
     }
 
-    public List<VisitorWish> getVisitorWishList() {
-        return visitorWishList;
-    }
-
-    public void setVisitorWishList(List<VisitorWish> visitorWishList) {
-        this.visitorWishList = visitorWishList;
-    }
-
+//    public List<VisitorWish> getVisitorWishList() {
+//        return visitorWishList;
+//    }
+//
+//    public void setVisitorWishList(List<VisitorWish> visitorWishList) {
+//        this.visitorWishList = visitorWishList;
+//    }
+//
     @Override
     public HardSoftScore getScore() {
         return score;
@@ -89,7 +89,7 @@ public class DayPlanning implements Solution<HardSoftScore> {
 
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
-        facts.addAll(visitorWishList);
+//        facts.addAll(visitorWishList);
         facts.addAll(visitorGroupList);
         facts.addAll(attractionList);
         facts.addAll(periodList);

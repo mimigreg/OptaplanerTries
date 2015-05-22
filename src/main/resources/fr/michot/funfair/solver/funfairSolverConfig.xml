@@ -10,7 +10,7 @@
     </scoreDirectorFactory>
 
     <termination>
-        <secondsSpentLimit>60</secondsSpentLimit>
+        <secondsSpentLimit>240</secondsSpentLimit>
     </termination>
     <constructionHeuristic>
         <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>

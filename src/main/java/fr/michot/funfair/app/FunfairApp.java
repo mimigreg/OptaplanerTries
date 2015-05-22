@@ -3,7 +3,6 @@ package fr.michot.funfair.app;
 import fr.michot.funfair.domain.DayPlanning;
 import fr.michot.funfair.domain.FunSession;
 import fr.michot.funfair.domain.Visitor;
-import fr.michot.funfair.domain.VisitorGroup;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
 
@@ -46,7 +45,7 @@ public class FunfairApp {
         List<FunSession> funSessions = solvedDayPlanning.getFunSessionList();
         Map<String,List<Visitor>> attractionsPlaning = new HashMap();
         for (FunSession funSession : funSessions) {
-            String timedAttraction = funSession.getAttraction().getName() + "\t\t" + funSession.getPeriod().getStartDateTimeString()+ "\t\t capacity : " + funSession.getAttraction().getSessionCapacity();
+            String timedAttraction = funSession.getAttraction().getName() + "\t\t" + funSession.getPeriod().getPeriodDescription()+ "\t\t capacity : " + funSession.getAttraction().getPeriodCapacity();
             List<Visitor> visitorGroups = attractionsPlaning.get(timedAttraction);
             if(visitorGroups == null) visitorGroups = new ArrayList<Visitor>();
             visitorGroups.addAll(funSession.getVisitorGroup().getVisitorList());

@@ -7,8 +7,7 @@ package fr.michot.funfair.domain;
 public class Attraction {
     protected Long id;
     private String name;
-    private int sessionCapacity;
-    private int sessionDuration;
+    private int periodCapacity;
     private Long longitude;
     private Long latitude;
 
@@ -28,20 +27,12 @@ public class Attraction {
         this.name = name;
     }
 
-    public int getSessionCapacity() {
-        return sessionCapacity;
+    public int getPeriodCapacity() {
+        return periodCapacity;
     }
 
-    public void setSessionCapacity(int sessionCapacity) {
-        this.sessionCapacity = sessionCapacity;
-    }
-
-    public int getSessionDuration() {
-        return sessionDuration;
-    }
-
-    public void setSessionDuration(int sessionDuration) {
-        this.sessionDuration = sessionDuration;
+    public void setPeriodCapacity(int periodCapacity) {
+        this.periodCapacity = periodCapacity;
     }
 
     public Long getLongitude() {
@@ -72,8 +63,7 @@ public class Attraction {
 
         Attraction that = (Attraction) o;
 
-        if (sessionCapacity != that.sessionCapacity) return false;
-        if (sessionDuration != that.sessionDuration) return false;
+        if (periodCapacity != that.periodCapacity) return false;
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (latitude != null ? !latitude.equals(that.latitude) : that.latitude != null) return false;
         if (longitude != null ? !longitude.equals(that.longitude) : that.longitude != null) return false;
@@ -86,8 +76,7 @@ public class Attraction {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + sessionCapacity;
-        result = 31 * result + sessionDuration;
+        result = 31 * result + periodCapacity;
         result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
         result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
         return result;
