@@ -1,6 +1,7 @@
 package fr.michot.funfair.app;
 
 import fr.michot.funfair.domain.*;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class FunfairAppTest {
     }
 
     @Test
+    @Ignore
     public void testMain() throws Exception {
         assertNotNull("Fail : dayPlanning not initialized",dayPlanning);
         FunfairApp.main(null);
